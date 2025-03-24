@@ -4,13 +4,15 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
   
 concurrency:
   group: "pages"
   cancel-in-progress: false
-
-env:
-  BUILD_PATH: "."
 
 jobs:
   build:
@@ -23,7 +25,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: "16"
+          node-version: "20"
           
       - uses: pnpm/action-setup@v2
         name: Install pnpm
@@ -51,18 +53,21 @@ jobs:
         working-directory: ${{ env.BUILD_PATH }}
         
       - name: Build with Astro
-        run: |
-          pnpm astro build
-        working-directory: ${{ env.BUILD_PATH }}
+        run: pnpm astro build
         
-      - name: Install SSH key
-        uses: shimataro/ssh-key-action@6f350ca8484d8d55c2e361e74d17e638dabe713a
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          key: ${{ secrets.SSH_KEY }}
-          known_hosts: ${{ secrets.KNOWN_HOSTS }}
-          
-      - name: Copy files to VM
-        run: rsync -chav --delete ${{ env.BUILD_PATH }}/dist/ ${{ secrets.USER_AND_IP }}:/var/www/HenryHiles/tmp
-        
-      - name: Execute remote command
-        run: ssh ${{ secrets.USER_AND_IP }} sudo /var/www/deploy-astro.sh www.henryhiles.com HenryHiles
+          path: dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
