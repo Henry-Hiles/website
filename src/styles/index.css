@@ -1,7 +1,6 @@
 header {
     display: flex;
     flex-direction: column;
-    font-size: 2em;
     justify-content: center;
     align-items: center;
 
@@ -11,9 +10,15 @@ header {
     }
 
     & span {
+        font-size: 2em;
         display: flex;
         text-align: center;
-        padding: 0 0.5rem;
+        padding: 2rem 0.5rem;
+        padding-top: 0;
+    }
+
+    & a {
+        font-size: 0.5rem;
     }
 }
 
@@ -23,13 +28,9 @@ mdui-card {
 }
 
 main > * > section {
-    &#certificates mdui-card {
+    &#certificates div {
         padding: 1em;
         flex-wrap: wrap;
-
-        @media (max-width: 500px) {
-            border: none;
-        }
 
         & a {
             min-width: 150px;
@@ -39,51 +40,42 @@ main > * > section {
 
     &#projects div {
         display: flex;
+        gap: 0;
         flex-direction: column;
-        gap: 1em;
-        & mdui-card {
-            @media (max-width: 500px) {
-                border: none;
 
-                & section {
-                    padding: 0;
+        & section {
+            margin: 0.5em;
+            padding: 1em;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            & article {
+                & h3 {
+                    font-size: 2em;
+                    margin: 0.5em 0;
+                }
+                & p {
+                    margin: 0;
+                }
+                width: 420px;
+            }
+            & aside {
+                display: flex;
+                justify-content: center;
+                width: 380px;
+                gap: 1em;
+                & img {
+                    border-radius: var(--mdui-shape-corner-medium);
+                    border: 2px solid rgb(var(--primary));
+
+                    .double > & {
+                        width: 45%;
+                    }
                 }
             }
-
-            & section {
-                margin: 1em;
-                padding: 1em;
-                display: flex;
-                gap: 2rem;
-                justify-content: center;
-                flex-wrap: wrap;
-                & article {
-                    & h3 {
-                        font-size: 2em;
-                        margin: 0.5em 0;
-                    }
-                    & p {
-                        margin: 0;
-                    }
-                    width: 420px;
-                }
-                & aside {
-                    display: flex;
-                    justify-content: center;
-                    width: 380px;
-                    gap: 1em;
-                    & img {
-                        border-radius: var(--mdui-shape-corner-medium);
-                        border: 2px solid rgb(var(--primary));
-
-                        .double > & {
-                            width: 45%;
-                        }
-                    }
-                }
-                :nth-child(even) > & {
-                    flex-direction: row-reverse;
-                }
+            :nth-child(even) > & {
+                flex-direction: row-reverse;
             }
         }
     }

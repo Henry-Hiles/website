@@ -14,12 +14,14 @@ import googleCS from "../images/certificates/googleCS.png"
 import metaFrontEnd from "../images/certificates/metaFrontEnd.png"
 import ButtonLink from "../components/ButtonLink.astro"
 import BottomBar from "../components/BottomBar.astro"
+import CallToAction from "../components/CallToAction.astro"
 ---
 
 <Layout title="Home">
     <header id="home">
         <Image src={logoLong} alt="Henry Hiles" />
         <span>Multiplatform Flutter Developer & Front-End Web Developer</span>
+        <CallToAction />
     </header>
     <mdui-card variant="outlined">
         <section id="about">
@@ -73,71 +75,65 @@ import BottomBar from "../components/BottomBar.astro"
             <h2>My Projects</h2>
             <mdui-divider></mdui-divider>
             <div>
-                {
-                    [
-                        <section>
-                            <article>
-                                <h3>Federated Nexus</h3>
-                                <p>
-                                    I run{" "}
-                                    <a href="https://federated.nexus">Federated Nexus</a>, a community resource hosting multiple FOSS (especially federated) services, including Matrix and Forgejo.
-                                </p>
-                            </article>
-                            <aside>
-                                <Image
-                                    src={federatedNexus}
-                                    alt="The new federated.nexus website"
-                                />
-                            </aside>
-                        </section>,
-                        <section>
-                            <article>
-                                <h3>The new Quantarc website</h3>
-                                <p>
-                                    I developed the{" "}
-                                    <a href="https://quantarc.co.uk">new website for Quantarc</a>, a UK firm that specialises in providing
-                                    management solutions to both private and
-                                    public entities.
-                                </p>
-                            </article>
-                            <aside>
-                                <Image
-                                    src={quantarcSite}
-                                    alt="The new quantarc.co.uk website"
-                                />
-                            </aside>
-                        </section>,
-                        <section>
-                            <article>
-                                <h3>Quantarc Mobile Apps</h3>
-                                <p>
-                                    I designed, developed, and distributed
-                                    two mobile apps for Quantarc, QHelpdesk and
-                                    QJobProcessor. QHelpdesk streamlines
-                                    customer support by enabling users to
-                                    submit, track, and manage requests
-                                    efficiently, while QJobProcessor allows
-                                    contractors to see, complete, and update
-                                    jobs. My responsibilities included UI/UX
-                                    design, multiplatform support, and app
-                                    development.
-                                </p>
-                            </article>
-                            <aside class="double">
-                                <Image
-                                    src={jobProcessor}
-                                    alt="The QJobProcessor mobile app"
-                                />
-                                <Image
-                                    src={helpdesk}
-                                    alt="The QHelpdesk mobile app"
-                                />
-                            </aside>
-                        </section>,
-                    ].map((elem) => (
-                        <mdui-card variant="outlined">{elem}</mdui-card>
-                    ))
-                }
+                <section>
+                    <article>
+                        <h3>Federated Nexus</h3>
+                        <p>
+                            I run <a href="https://federated.nexus"
+                                >Federated Nexus</a
+                            >, a community resource hosting multiple FOSS
+                            (especially federated) services, including Matrix
+                            and Forgejo.
+                        </p>
+                    </article>
+                    <aside>
+                        <Image
+                            src={federatedNexus}
+                            alt="The new federated.nexus website"
+                        />
+                    </aside>
+                </section>
+                <section>
+                    <article>
+                        <h3>The new Quantarc website</h3>
+                        <p>
+                            I developed the{" "}
+                            <a href="https://quantarc.co.uk"
+                                >new website for Quantarc</a
+                            >, a UK firm that specialises in providing
+                            management solutions to both private and public
+                            entities.
+                        </p>
+                    </article>
+                    <aside>
+                        <Image
+                            src={quantarcSite}
+                            alt="The new quantarc.co.uk website"
+                        />
+                    </aside>
+                </section>
+                <section>
+                    <article>
+                        <h3>Quantarc Mobile Apps</h3>
+                        <p>
+                            I designed, developed, and distributed two mobile
+                            apps for Quantarc, QHelpdesk and QJobProcessor.
+                            QHelpdesk streamlines customer support by enabling
+                            users to submit, track, and manage requests
+                            efficiently, while QJobProcessor allows contractors
+                            to see, complete, and update jobs. My
+                            responsibilities included UI/UX design,
+                            multiplatform support, and app development.
+                        </p>
+                    </article>
+                    <aside class="double">
+                        <Image
+                            src={jobProcessor}
+                            alt="The QJobProcessor mobile app"
+                        />
+                        <Image src={helpdesk} alt="The QHelpdesk mobile app" />
+                    </aside>
+                </section>
             </div>
         </section>
     </mdui-card>
@@ -154,8 +150,7 @@ import BottomBar from "../components/BottomBar.astro"
                     Microsoft Azure cloud services, and front-end development:
                 </p>
             </article>
-
-            <mdui-card variant="outlined">
+            <div>
                 <a
                     href="https://www.credly.com/badges/bd5a8213-4e3d-4b93-9b7d-4cbce07ef960/public_url"
                     target="_blank"
@@ -194,7 +189,7 @@ import BottomBar from "../components/BottomBar.astro"
                 >
                     <Image src={googleCS} alt="Google Cybersecurity Badge" />
                 </a>
-            </mdui-card>
+            </div>
         </section>
     </mdui-card>
     <mdui-card variant="outlined">
@@ -213,27 +208,7 @@ import BottomBar from "../components/BottomBar.astro"
                 </p>
             </article>
 
-            <ButtonLink
-                href={"mai" + "lto:" + "contact@henr" + "yhiles." + "com"}
-            >
-                <mdui-icon>
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        ><path
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="m9.474 16l9.181 3.284a1.1 1.1 0 0 0 1.462-.887L21.99 4.239c.114-.862-.779-1.505-1.567-1.13L2.624 11.605c-.88.42-.814 1.69.106 2.017l2.44.868l1.33.467M13 17.26l-1.99 3.326c-.65.808-1.959.351-1.959-.683V17.24a2 2 0 0 1 .53-1.356l3.871-4.2"
-                        ></path></svg
-                    ></mdui-icon
-                >
-                Contact me for a quote
-            </ButtonLink>
+            <CallToAction />
         </section>
     </mdui-card>
     <BottomBar slot="navbar" />
