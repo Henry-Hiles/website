@@ -12,8 +12,8 @@ button,
     text-decoration: none;
 
     & mdui-icon {
-        height: 1em;
-        width: 1em;
+        height: 1.1em;
+        width: 1.1em;
         color: rgb(var(--primary));
     }
 
