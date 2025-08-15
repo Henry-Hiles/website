@@ -74,7 +74,7 @@ main > * > section {
                     }
                 }
             }
-            :nth-child(even) > & {
+            &:nth-child(even) {
                 flex-direction: row-reverse;
             }
         }
