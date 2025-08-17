@@ -56,15 +56,18 @@ main > * > section {
                     color: hsl(0, 0%, 60%);
                 }
                 & h3 {
-                    font-size: 2em;
+                    font-size: 1.85em;
+                    align-items: center;
                     font-weight: normal;
                     margin: 0.3em 0;
                     display: flex;
-                    align-items: center;
                     gap: 0.7rem;
 
                     & img {
                         width: 2.5rem;
+                        @media (max-width: 450px) {
+                            display: none;
+                        }
                     }
                 }
                 & p {
@@ -97,9 +100,5 @@ main > * > section {
             max-width: 350px;
             min-width: 300px;
         }
-    }
-
-    @media (max-width: 1500px) {
-        scroll-margin-top: 5em;
     }
 }
