@@ -8,11 +8,12 @@ import az900 from "../images/certificates/az900.png"
 import dp900 from "../images/certificates/dp900.png"
 import quantarcSite from "../images/projects/quantarcSite.png"
 import federatedNexus from "../images/projects/federatedNexus.png"
-import jobProcessor from "../images/projects/jobProcessor.jpg"
-import helpdesk from "../images/projects/helpdesk.jpg"
+import federatedNexusIcon from "../images/projects/icons/federatedNexus.svg"
+import jobProcessor from "../images/projects/qJobProcessor.jpg"
+import helpdesk from "../images/projects/qHelpdesk.jpg"
+import jobProcessorIcon from "../images/projects/icons/qJobProcessor.svg"
 import googleCS from "../images/certificates/googleCS.png"
 import metaFrontEnd from "../images/certificates/metaFrontEnd.png"
-import ButtonLink from "../components/ButtonLink.astro"
 import BottomBar from "../components/BottomBar.astro"
 import CallToAction from "../components/CallToAction.astro"
 ---
@@ -77,7 +78,13 @@ import CallToAction from "../components/CallToAction.astro"
             <div>
                 <section>
                     <article>
-                        <h3>Federated Nexus</h3>
+                        <h3
+                            ><Image
+                                width={1}
+                                src={federatedNexusIcon}
+                                alt="The Federated Nexus logo, showing interconnected lines going out to orbs filled with the colors of the pride flag."
+                            /> Federated Nexus</h3
+                        >
                         <p>
                             I run <a href="https://federated.nexus"
                                 >Federated Nexus</a
@@ -89,17 +96,17 @@ import CallToAction from "../components/CallToAction.astro"
                     <aside>
                         <Image
                             src={federatedNexus}
-                            alt="The new federated.nexus website"
+                            alt="The federated.nexus website"
                         />
                     </aside>
                 </section>
                 <section>
                     <article>
-                        <h3>The new Quantarc website</h3>
+                        <h3>The Quantarc website</h3>
                         <p>
                             I developed the{" "}
                             <a href="https://quantarc.co.uk"
-                                >new website for Quantarc</a
+                                >website for Quantarc</a
                             >, a UK firm that specialises in providing
                             management solutions to both private and public
                             entities.
@@ -108,13 +115,18 @@ import CallToAction from "../components/CallToAction.astro"
                     <aside>
                         <Image
                             src={quantarcSite}
-                            alt="The new quantarc.co.uk website"
+                            alt="The quantarc.co.uk website"
                         />
                     </aside>
                 </section>
                 <section>
                     <article>
-                        <h3>Quantarc Mobile Apps</h3>
+                        <h3
+                            ><Image
+                                src={jobProcessorIcon}
+                                alt="The icon for QJobProcessor"
+                            />Quantarc Mobile Apps</h3
+                        >
                         <p>
                             I designed, developed, and distributed two mobile
                             apps for Quantarc, QHelpdesk and QJobProcessor.
