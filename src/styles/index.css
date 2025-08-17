@@ -47,14 +47,18 @@ main > * > section {
             margin: 0.5em;
             padding: 1em;
             display: flex;
-            gap: 2rem;
+            gap: 2.3rem;
+            align-items: center;
             justify-content: center;
             flex-wrap: wrap;
             & article {
+                & span {
+                    color: hsl(0, 0%, 60%);
+                }
                 & h3 {
                     font-size: 2em;
                     font-weight: normal;
-                    margin: 0.5em 0;
+                    margin: 0.3em 0;
                     display: flex;
                     align-items: center;
                     gap: 0.7rem;
@@ -64,7 +68,7 @@ main > * > section {
                     }
                 }
                 & p {
-                    margin: 0;
+                    margin: 0.7rem 0;
                 }
                 width: 420px;
             }
@@ -75,7 +79,6 @@ main > * > section {
                 gap: 1em;
                 & img {
                     border-radius: var(--mdui-shape-corner-medium);
-                    border: 2px solid rgb(var(--primary));
 
                     .double > & {
                         width: 45%;
