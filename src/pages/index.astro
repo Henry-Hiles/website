@@ -6,7 +6,7 @@ import logoLong from "../images/logoLong.svg"
 import ai900 from "../images/certificates/ai900.png"
 import az900 from "../images/certificates/az900.png"
 import dp900 from "../images/certificates/dp900.png"
-import quantarcSite from "../images/projects/quantarcSite.png"
+import nixpkgs from "../images/projects/nixpkgs.png"
 import matrixOidc from "../images/projects/matrixOidc.png"
 import nexusBot from "../images/projects/nexusBot.png"
 import federatedNexus from "../images/projects/federatedNexus.png"
@@ -118,7 +118,7 @@ import CallToAction from "../components/CallToAction.astro"
                                 >MatrixOIDC</a
                             >, for Federated Nexus, an API that allows for OIDC
                             login to services authenticating against a Matrix
-                            homeserver, without the the homeserver needing to
+                            homeserver, without the homeserver needing to
                             support OIDC.
                         </p>
                     </article>
@@ -138,15 +138,34 @@ import CallToAction from "../components/CallToAction.astro"
                                 href="https://git.federated.nexus/Federated-Nexus/nexusbot"
                                 >Nexusbot</a
                             >, a bot which automates the signup process for
-                            Federated Nexus by sending user registrations into
-                            an administrator Matrix room, where each application
-                            can be accepted or denied.
+                            Federated Nexus. It does this by sending user
+                            registrations into an administrator Matrix room,
+                            where each application can be accepted or denied.
                         </p>
                     </article>
                     <aside>
                         <Image
                             src={nexusBot}
                             alt="A screenshot showing registrations to Federated Nexus, sent by Nexusbot"
+                        />
+                    </aside>
+                </section>
+                <section>
+                    <article>
+                        <h3>Nixpkgs</h3>
+                        <span>Aug 2023 - Present</span>
+                        <p>
+                            I maintain many packages in <a
+                                href="https://github.com/NixOS/nixpkgs"
+                                >Nixpkgs</a
+                            >, a collection of over 120,000 software packages
+                            that can be installed with the Nix package manager.
+                        </p>
+                    </article>
+                    <aside>
+                        <Image
+                            src={nixpkgs}
+                            alt="A screenshot showing Nixpkgs open in VSCodium"
                         />
                     </aside>
                 </section>
