@@ -7,6 +7,8 @@ import ai900 from "../images/certificates/ai900.png"
 import az900 from "../images/certificates/az900.png"
 import dp900 from "../images/certificates/dp900.png"
 import quantarcSite from "../images/projects/quantarcSite.png"
+import matrixOidc from "../images/projects/matrixOidc.png"
+import nexusBot from "../images/projects/nexusBot.png"
 import federatedNexus from "../images/projects/federatedNexus.png"
 import nexusClient from "../images/projects/nexusClient.png"
 import federatedNexusIcon from "../images/projects/icons/federatedNexus.svg"
@@ -22,7 +24,8 @@ import CallToAction from "../components/CallToAction.astro"
 <Layout title="Home" id="home">
     <header>
         <Image src={logoLong} alt="Henry Hiles" />
-        <span>Multiplatform Flutter Developer & Front-End Web Developer</span>
+        <span>NixOS System Administrator & Multiplatform Flutter Developer</span
+        >
         <CallToAction />
     </header>
     <mdui-card variant="outlined">
@@ -31,50 +34,33 @@ import CallToAction from "../components/CallToAction.astro"
             <mdui-divider></mdui-divider>
             <article>
                 <p>
-                    Hello, I'm Henry Hiles, a developer specialising in Flutter
-                    and Web development. I'm proficient with Dart, Astro,
-                    Node.JS, and TypeScript.
+                    Hello, I'm Henry Hiles, a developer specialising in NixOS
+                    system administration and Flutter development. I'm
+                    proficient with Nix, Dart, and Bash.
                 </p>
                 <p>
-                    I build high-performance, intuitive applications with clean,
-                    efficient code and modern design principles.
+                    I build maintainable, declarative, and reproducible systems
+                    with Nix, usually using flakes, flake-parts, and Agenix.
+                    However, I can quickly adapt to any other preferred system.
+                    I also build high-performance, intuitive apps with Flutter,
+                    usually using Riverpod, Freezed, and Flutter Hooks.
                 </p>
                 <p>
-                    Always eager to learn, I’ve earned certifications from
+                    Always eager to learn, I've earned certifications from
                     Microsoft, Google, and Meta in cloud computing, AI, and
                     cybersecurity.
                 </p>
                 <p>
-                    Whether I'm optimising mobile apps or designing websites,
-                    I’m passionate about delivering innovative digital
-                    solutions.
+                    Whether I'm configuring a new service with Nix, or designing
+                    a new app in Flutter, I'm always looking to deliver clean
+                    and efficient solutions.
                 </p>
             </article>
-
-            <a
-                href="https://github.com/Henry-Hiles"
-                target="_blank"
-                rel="noreferrer"
-                id="stats"
-            >
-                <div>
-                    <img
-                        src={`https://raw.githubusercontent.com/Henry-Hiles/github-stats/master/generated/overview.svg#gh-dark-mode-only`}
-                        alt="My Github Stats"
-                    />
-                    <img
-                        src={`https://raw.githubusercontent.com/Henry-Hiles/github-stats/master/generated/languages.svg${
-                            false ? "#gh-light-mode-only" : "#gh-dark-mode-only"
-                        }`}
-                        alt="My Github Stats"
-                    />
-                </div>
-            </a>
         </section>
     </mdui-card>
     <mdui-card variant="outlined">
         <section id="projects">
-            <h2>My Projects</h2>
+            <h2>My Projects and Contributions</h2>
             <mdui-divider></mdui-divider>
             <div>
                 <section>
@@ -90,9 +76,10 @@ import CallToAction from "../components/CallToAction.astro"
                         <p>
                             I run <a href="https://federated.nexus"
                                 >Federated Nexus</a
-                            >, a community resource with over 250 users that
-                            hosts multiple FOSS (especially federated) services,
-                            including Matrix and Forgejo.
+                            >, a community resource hosted on Nix with over 250
+                            users. We host many FOSS (especially federated)
+                            services, including Matrix, LaSuite Docs, and
+                            Forgejo.
                         </p>
                     </article>
                     <aside>
@@ -111,13 +98,55 @@ import CallToAction from "../components/CallToAction.astro"
                                 href="https://git.federated.nexus/Henry-Hiles/nexus"
                                 >Nexus Client</a
                             >, a simple and user-friendly Matrix client made
-                            with Flutter and the Matrix Dart SDK.
+                            with Flutter and the Gomuks SDK.
                         </p>
                     </article>
                     <aside>
                         <Image
                             src={nexusClient}
                             alt="The login page for Nexus Client"
+                        />
+                    </aside>
+                </section>
+                <section>
+                    <article>
+                        <h3>MatrixOIDC</h3>
+                        <span>Nov 2025 - Present</span>
+                        <p>
+                            I made <a
+                                href="https://git.federated.nexus/henry-hiles/matrixoidc"
+                                >MatrixOIDC</a
+                            >, for Federated Nexus, an API that allows for OIDC
+                            login to services authenticating against a Matrix
+                            homeserver, without the the homeserver needing to
+                            support OIDC.
+                        </p>
+                    </article>
+                    <aside>
+                        <Image
+                            src={matrixOidc}
+                            alt="The login page for Federated Nexus, which uses MatrixOIDC as a backend"
+                        />
+                    </aside>
+                </section>
+                <section>
+                    <article>
+                        <h3>Nexusbot</h3>
+                        <span>Nov 2025 - Present</span>
+                        <p>
+                            I created <a
+                                href="https://git.federated.nexus/Federated-Nexus/nexusbot"
+                                >Nexusbot</a
+                            >, a bot which automates the signup process for
+                            Federated Nexus by sending user registrations into
+                            an administrator Matrix room, where each application
+                            can be accepted or denied.
+                        </p>
+                    </article>
+                    <aside>
+                        <Image
+                            src={nexusBot}
+                            alt="A screenshot showing registrations to Federated Nexus, sent by Nexusbot"
                         />
                     </aside>
                 </section>
@@ -147,26 +176,6 @@ import CallToAction from "../components/CallToAction.astro"
                             alt="The QJobProcessor mobile app"
                         />
                         <Image src={helpdesk} alt="The QHelpdesk mobile app" />
-                    </aside>
-                </section>
-                <section>
-                    <article>
-                        <h3>Quantarc Website</h3>
-                        <span>Jan - May 2025</span>
-                        <p>
-                            I developed the{" "}
-                            <a href="https://quantarc.co.uk"
-                                >website for Quantarc</a
-                            >, a UK firm that specialises in providing
-                            management solutions to both private and public
-                            entities.
-                        </p>
-                    </article>
-                    <aside>
-                        <Image
-                            src={quantarcSite}
-                            alt="The quantarc.co.uk website"
-                        />
                     </aside>
                 </section>
             </div>
@@ -234,12 +243,11 @@ import CallToAction from "../components/CallToAction.astro"
 
             <article>
                 <p>
-                    Hire me to design and develop high-performance static
-                    websites and versatile multiplatform applications. With a
-                    focus on clean, efficient code and intuitive user
-                    experiences, I create solutions that are not only visually
-                    appealing but also optimized for speed, accessibility, and
-                    seamless functionality across all devices.
+                    Hire me for NixOS system administration and multiplatform
+                    Flutter development. I deliver reproducible, declarative
+                    infrastructure with Nix and fast, intuitive applications
+                    with Flutter, prioritising clean code, performance,
+                    accessibility, and reliable operation across platforms.
                 </p>
             </article>
 
