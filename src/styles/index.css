@@ -66,6 +66,7 @@ main > * > section {
 
                     & img {
                         width: 2.5rem;
+                        border-radius: 0.5rem;
                         @media (max-width: 450px) {
                             display: none;
                         }
