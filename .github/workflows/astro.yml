@@ -23,7 +23,7 @@ jobs:
 
       - uses: denoland/setup-deno@61fe2df320078202e33d7d5ad347e7dcfa0e8f31
         with:
-          deno-version: v2.1.5
+          deno-version: v2.7.14
 
       - name: Install dependencies
         run: deno i
